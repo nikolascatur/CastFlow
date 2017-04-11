@@ -1,0 +1,22 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <Import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="phone.nikolas.com.castflow.activity.main.MainMenuViewModel" />
+
+        <variable
+            name="handler"
+            type="phone.nikolas.com.castflow.activity.main.MainMenuHandler" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </RelativeLayout>
+</layout>
