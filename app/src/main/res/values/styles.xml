@@ -13,4 +13,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="signUp">
+        <item name="android:textColor">@color/colorBlue</item>
+    </style>
 </resources>

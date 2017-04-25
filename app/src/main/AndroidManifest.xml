@@ -3,18 +3,18 @@
     package="phone.nikolas.com.castflow">
 
     <application
+        android:name=".BaseApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.splash.SplashActivity"
+        <activity
+            android:name=".activity.splash.SplashActivity"
             android:label="CastFlow"
-            android:theme="@style/AppTheme.NoActionBar"
-            >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"
-                    />
+                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -22,6 +22,18 @@
         <activity
             android:name=".activity.main.MainMenuActivity"
             android:label="Main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.login.LoginActivity"
+            android:label="Login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.forgotpassword.ForgotPasswordActivity"
+            android:label="ForgotPassword"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.signup.SignupActivity"
+            android:label="SignUp"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

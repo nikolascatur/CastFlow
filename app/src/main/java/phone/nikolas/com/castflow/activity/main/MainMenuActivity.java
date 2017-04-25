@@ -16,7 +16,8 @@ import phone.nikolas.com.castflow.listener.MainNavigationListener;
  * Created by Pleret on 4/11/2017.
  */
 
-public class MainMenuActivity extends BaseActivity<ActivityMainMenuBinding,MainMenuViewModel,MainMenuPresenter> implements MainMenuView {
+public class MainMenuActivity extends BaseActivity<ActivityMainMenuBinding,MainMenuViewModel,MainMenuPresenter>
+        implements MainMenuView {
     @Override
     protected void initInjection() {
         ((BaseApp)getApplication()).getAppComponent().inject(this);
@@ -46,7 +47,10 @@ public class MainMenuActivity extends BaseActivity<ActivityMainMenuBinding,MainM
         MainMenuHandler handler = new MainMenuHandler();
         handler.setPresenter(presenter);
         binding.setHandler(handler);
-        setSupportActionBar(binding.toolbar);
+        binding.setManager(getSupportFragmentManager());
+
+
+        /*setSupportActionBar(binding.toolbar);
 
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
@@ -58,7 +62,7 @@ public class MainMenuActivity extends BaseActivity<ActivityMainMenuBinding,MainM
 
         if(savedinstance == null) {
             listener.onNavigationItemSelected(binding.navView.getMenu().getItem(0));
-        }
+        }*/
 
     }
 }
