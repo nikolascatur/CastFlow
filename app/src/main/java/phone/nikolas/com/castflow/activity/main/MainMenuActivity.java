@@ -1,8 +1,11 @@
 package phone.nikolas.com.castflow.activity.main;
 
+import android.databinding.BindingAdapter;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 
 import phone.nikolas.com.castflow.BaseApp;
@@ -63,6 +66,27 @@ public class MainMenuActivity extends BaseActivity<ActivityMainMenuBinding,MainM
         if(savedinstance == null) {
             listener.onNavigationItemSelected(binding.navView.getMenu().getItem(0));
         }*/
+
+    }
+
+//
+    @BindingAdapter({"bind:handler"})
+    public static void bindViewPagerAdapter(final ViewPager view, final MainMenuActivity activity){
+
+    }
+
+    @BindingAdapter({"bind:adapter"})
+    public static void bindViewPagerTabs(final TabLayout tab, final ViewPager pagerView){
+
+    }
+
+    @Override
+    public void initTabLayout() {
+        TabLayout tab = new TabLayout(this);
+        tab.addTab(tab.newTab().setText("Tab 1"));
+        tab.addTab(tab.newTab().setText("Tab 2"));
+        tab.addTab(tab.newTab().setText("Tab 3"));
+
 
     }
 }

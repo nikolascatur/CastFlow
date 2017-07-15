@@ -5,4 +5,6 @@ package phone.nikolas.com.castflow.activity.main;
  */
 
 public interface MainMenuView {
+
+    public void initTabLayout();
 }

@@ -7,4 +7,14 @@ import phone.nikolas.com.castflow.base.BasePresenter;
  */
 
 public class LoginPresenter extends BasePresenter<LoginActivity,LoginViewModel> {
+
+    public boolean checkPassword(){
+
+        return true;
+
+    }
+
+    public void enterApplication(){
+        view.loginAction();
+    }
 }

@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import phone.nikolas.com.castflow.R;
+import phone.nikolas.com.castflow.activity.login.LoginActivity;
 import phone.nikolas.com.castflow.activity.main.MainMenuActivity;
 
 /**
@@ -24,7 +25,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, MainMenuActivity.class);
+                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }

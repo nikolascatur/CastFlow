@@ -12,7 +12,9 @@ public class LoginHandler {
 
     public void onCLickLogin()
     {
-
+        if(presenter.checkPassword()){
+            presenter.enterApplication();
+        }
     }
 
     public void onClickSignup(){

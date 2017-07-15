@@ -1,11 +1,13 @@
 package phone.nikolas.com.castflow.activity.login;
 
+import android.content.Intent;
 import android.databinding.DataBindingComponent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 
 import phone.nikolas.com.castflow.BaseApp;
 import phone.nikolas.com.castflow.R;
+import phone.nikolas.com.castflow.activity.main.MainMenuActivity;
 import phone.nikolas.com.castflow.base.BaseActivity;
 import phone.nikolas.com.castflow.databinding.ActivityLoginBinding;
 
@@ -42,5 +44,13 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding,LoginViewMo
         LoginHandler handler = new LoginHandler();
         handler.setPresenter(presenter);
         binding.setHandler(handler);
+    }
+
+
+    @Override
+    public void loginAction() {
+        Intent intent = new Intent(this, MainMenuActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

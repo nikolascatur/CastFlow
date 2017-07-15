@@ -5,4 +5,6 @@ package phone.nikolas.com.castflow.activity.login;
  */
 
 public interface LoginView {
+
+    public void loginAction();
 }
