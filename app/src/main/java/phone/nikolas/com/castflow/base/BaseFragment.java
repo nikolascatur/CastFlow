@@ -16,6 +16,7 @@ public abstract class BaseFragment<B,V,P> extends Fragment {
     protected B binding;
     protected V viewModel;
     protected P presenter;
+    protected View mViewRoot;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,11 +27,11 @@ public abstract class BaseFragment<B,V,P> extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = initBinding(inflater, container, savedInstanceState);
+        mViewRoot = initBinding(inflater, container, savedInstanceState);
         initPresenter();
         initViewModel();
         onViewReady(savedInstanceState);
-        return view;
+        return mViewRoot;
     }
 
     protected abstract void initInjection();

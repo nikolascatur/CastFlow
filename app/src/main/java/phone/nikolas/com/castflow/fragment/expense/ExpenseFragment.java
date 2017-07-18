@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.zip.Inflater;
+
 import phone.nikolas.com.castflow.base.BaseFragment;
 
 /**
@@ -19,6 +21,7 @@ public class ExpenseFragment extends BaseFragment implements ExpenseView {
 
     @Override
     protected View initBinding(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         return null;
     }
 
