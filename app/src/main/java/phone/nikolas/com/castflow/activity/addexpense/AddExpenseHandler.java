@@ -5,4 +5,13 @@ package phone.nikolas.com.castflow.activity.addexpense;
  */
 
 public class AddExpenseHandler {
+    private AddExpensePresenter presenter;
+
+    public AddExpensePresenter getPresenter() {
+        return presenter;
+    }
+
+    public void setPresenter(AddExpensePresenter presenter) {
+        this.presenter = presenter;
+    }
 }

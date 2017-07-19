@@ -35,6 +35,10 @@
             android:name=".activity.signup.SignupActivity"
             android:label="SignUp"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.addexpense.AddExpenseActivity"
+            android:label="AddExpense"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 

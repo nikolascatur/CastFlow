@@ -3,6 +3,7 @@ package phone.nikolas.com.castflow.depen.component;
 import javax.inject.Singleton;
 
 import dagger.Component;
+import phone.nikolas.com.castflow.activity.addexpense.AddExpenseActivity;
 import phone.nikolas.com.castflow.activity.forgotpassword.ForgotPasswordActivity;
 import phone.nikolas.com.castflow.activity.login.LoginActivity;
 import phone.nikolas.com.castflow.activity.main.MainMenuActivity;
@@ -19,4 +20,5 @@ public interface AppComponent {
     void inject(ForgotPasswordActivity forgotPasswordActivity);
     void inject(LoginActivity loginActivity);
     void inject(SignupActivity signupActivity);
+    void inject(AddExpenseActivity addExpenseActivity);
 }
