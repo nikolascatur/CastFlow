@@ -1,29 +1,40 @@
 package phone.nikolas.com.castflow.activity.main;
 
-import android.databinding.BindingAdapter;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
+
+
+import java.util.ArrayList;
+import java.util.List;
 
 import phone.nikolas.com.castflow.BaseApp;
 import phone.nikolas.com.castflow.R;
+import phone.nikolas.com.castflow.adapter.ViewPagerAdapter;
 import phone.nikolas.com.castflow.base.BaseActivity;
 import phone.nikolas.com.castflow.databinding.ActivityMainMenuBinding;
-import phone.nikolas.com.castflow.depen.component.AppComponent;
-import phone.nikolas.com.castflow.listener.MainNavigationListener;
+import phone.nikolas.com.castflow.fragment.expense.ExpenseFragment;
+import phone.nikolas.com.castflow.fragment.income.IncomeFragment;
+import phone.nikolas.com.castflow.fragment.main.MainFragment;
+import phone.nikolas.com.castflow.fragment.report.ReportFragment;
 
 /**
  * Created by Pleret on 4/11/2017.
  */
 
-public class MainMenuActivity extends BaseActivity<ActivityMainMenuBinding,MainMenuViewModel,MainMenuPresenter>
+public class MainMenuActivity extends BaseActivity<ActivityMainMenuBinding, MainMenuViewModel, MainMenuPresenter>
         implements MainMenuView {
+
+    List<Fragment> mFragments;
+    TabLayout tabLayout;
+    ViewPager viewPager;
+
+
     @Override
     protected void initInjection() {
-        ((BaseApp)getApplication()).getAppComponent().inject(this);
+        ((BaseApp) getApplication()).getAppComponent().inject(this);
     }
 
     @Override
@@ -52,7 +63,7 @@ public class MainMenuActivity extends BaseActivity<ActivityMainMenuBinding,MainM
         binding.setHandler(handler);
         binding.setManager(getSupportFragmentManager());
 
-
+        initTabLayout();
         /*setSupportActionBar(binding.toolbar);
 
         ActionBar actionBar = getSupportActionBar();
@@ -69,24 +80,17 @@ public class MainMenuActivity extends BaseActivity<ActivityMainMenuBinding,MainM
 
     }
 
-//
-    @BindingAdapter({"bind:handler"})
-    public static void bindViewPagerAdapter(final ViewPager view, final MainMenuActivity activity){
-
-    }
-
-    @BindingAdapter({"bind:adapter"})
-    public static void bindViewPagerTabs(final TabLayout tab, final ViewPager pagerView){
-
-    }
-
     @Override
     public void initTabLayout() {
-        TabLayout tab = new TabLayout(this);
-        tab.addTab(tab.newTab().setText("Tab 1"));
-        tab.addTab(tab.newTab().setText("Tab 2"));
-        tab.addTab(tab.newTab().setText("Tab 3"));
+        mFragments = new ArrayList<Fragment>();
+        mFragments.add(new MainFragment());
+        mFragments.add(new ExpenseFragment());
+        mFragments.add(new IncomeFragment());
+        mFragments.add(new ReportFragment());
 
-
+        viewPager = (ViewPager) findViewById(R.id.pager);
+        viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(),mFragments));
+        tabLayout = (TabLayout)findViewById(R.id.tab_layout);
+        tabLayout.setupWithViewPager(viewPager);
     }
 }
