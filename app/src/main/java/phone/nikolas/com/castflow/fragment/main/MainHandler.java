@@ -5,4 +5,17 @@ package phone.nikolas.com.castflow.fragment.main;
  */
 
 public class MainHandler {
+    private MainPresenter presenter;
+
+    public void clickButtonInput(int category,String type){
+        presenter.submitButtonInput(category,type);
+    }
+
+    public MainPresenter getPresenter() {
+        return presenter;
+    }
+
+    public void setPresenter(MainPresenter presenter) {
+        this.presenter = presenter;
+    }
 }

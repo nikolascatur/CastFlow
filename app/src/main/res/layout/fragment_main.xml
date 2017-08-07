@@ -9,58 +9,196 @@
         <import type="android.view.View" />
 
         <variable
-            name="ViewModel"
+            name="viewModel"
             type="phone.nikolas.com.castflow.fragment.main.MainViewModel" />
 
         <variable
-            name="Handler"
+            name="handler"
             type="phone.nikolas.com.castflow.fragment.main.MainHandler" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14pt"
-                android:text="@string/expense_text" />
+                android:layout_weight="2"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/expense_text"
+                    android:textSize="14pt" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/saldo_text"
+                    android:textSize="14pt" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14pt"
-                android:text="@string/saldo_text" />
+                android:layout_weight="2"
+                android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/expense_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="aaaaa"
+                    android:textSize="14pt" />
+
+                <TextView
+                    android:id="@+id/saldo_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="bbbbb"
+                    android:textSize="14pt" />
+
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/expense_text"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14pt"
-                android:text="" />
+                android:gravity="clip_horizontal"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/saldo_text"
-                android:layout_width="wrap_content"
+                <Button
+                    android:id="@+id/house_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="house"
+                    android:hint="@string/house_text"
+                    android:onClick="@{(view) -> handler.clickButtonInput(1,@string/house_text)}"
+                    />
+
+                <Button
+                    android:id="@+id/medic_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="medic"
+                    android:hint="@string/medic_text"
+                    android:onClick="@{(view) -> handler.clickButtonInput(1,@string/medic_text)}"
+                    />
+
+                <Button
+                    android:id="@+id/transport_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="transport"
+                    android:hint="@string/transport_text"
+                    android:onClick="@{(view) -> handler.clickButtonInput(1,@string/transport_text)}"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14pt"
-                android:text="" />
+                android:gravity="clip_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/food_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="food"
+                    android:hint="@string/food_text"
+                    android:onClick="@{(view) -> handler.clickButtonInput(1,@string/food_text)}"
+                    />
+
+                <Button
+                    android:id="@+id/recre_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="recre"
+                    android:hint="@string/recreation_text"
+                    android:onClick="@{(view) -> handler.clickButtonInput(1,@string/recreation_text)}"
+                    />
+
+                <Button
+                    android:id="@+id/education_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="education"
+                    android:hint="@string/education_text"
+                    android:onClick="@{(view) -> handler.clickButtonInput(1,@string/education_text)}"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="clip_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/clothes_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="clothes"
+                    android:hint="@string/clothes_text"
+                    android:onClick="@{(view) -> handler.clickButtonInput(1,@string/clothes_text)}"
+                    />
+
+                <Button
+                    android:id="@+id/communication_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="communi"
+                    android:hint="@string/communication_text"
+                    android:onClick="@{(view) -> handler.clickButtonInput(1,@string/communication_text)}"
+                    />
+
+                <Button
+                    android:id="@+id/toiletry_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="toilet"
+                    android:hint="@string/toilet_text"
+                    android:onClick="@{(view) -> handler.clickButtonInput(1,@string/toilet_text)}"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="clip_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/expense_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-" />
+
+
+                <Button
+                    android:id="@+id/income_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

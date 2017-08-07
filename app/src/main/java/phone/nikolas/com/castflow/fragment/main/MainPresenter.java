@@ -7,4 +7,17 @@ import phone.nikolas.com.castflow.base.BasePresenter;
  */
 
 public class MainPresenter extends BasePresenter<MainView,MainViewModel> {
+    private MainPresenter presenter;
+
+    public MainPresenter getPresenter() {
+        return presenter;
+    }
+
+    public void setPresenter(MainPresenter presenter) {
+        this.presenter = presenter;
+    }
+
+    public void submitButtonInput(int category,String type){
+        view.actionButtonInput(category,type);
+    }
 }

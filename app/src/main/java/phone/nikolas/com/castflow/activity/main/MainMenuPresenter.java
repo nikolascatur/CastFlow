@@ -7,4 +7,6 @@ import phone.nikolas.com.castflow.base.BasePresenter;
  */
 
 public class MainMenuPresenter  extends BasePresenter<MainMenuView,MainMenuViewModel>{
+
+
 }

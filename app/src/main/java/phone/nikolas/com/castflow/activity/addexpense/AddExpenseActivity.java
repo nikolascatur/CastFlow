@@ -26,7 +26,6 @@ public class AddExpenseActivity extends BaseActivity<ActivityAddExpenseBinding, 
 
     @Override
     protected void initViewModel() {
-
         viewModel = new AddExpenseViewModel();
         binding.setViewModel(viewModel);
     }

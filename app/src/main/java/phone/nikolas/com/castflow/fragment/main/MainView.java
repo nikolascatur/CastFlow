@@ -5,4 +5,6 @@ package phone.nikolas.com.castflow.fragment.main;
  */
 
 public interface MainView {
+
+    public void actionButtonInput(int category, String type);
 }

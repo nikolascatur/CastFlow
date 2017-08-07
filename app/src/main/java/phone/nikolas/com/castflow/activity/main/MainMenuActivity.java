@@ -1,5 +1,7 @@
 package phone.nikolas.com.castflow.activity.main;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -12,6 +14,7 @@ import java.util.List;
 
 import phone.nikolas.com.castflow.BaseApp;
 import phone.nikolas.com.castflow.R;
+import phone.nikolas.com.castflow.activity.addexpense.AddExpenseActivity;
 import phone.nikolas.com.castflow.adapter.ViewPagerAdapter;
 import phone.nikolas.com.castflow.base.BaseActivity;
 import phone.nikolas.com.castflow.databinding.ActivityMainMenuBinding;
@@ -28,6 +31,7 @@ public class MainMenuActivity extends BaseActivity<ActivityMainMenuBinding, Main
         implements MainMenuView {
 
     List<Fragment> mFragments;
+    List<String> mTitle;
     TabLayout tabLayout;
     ViewPager viewPager;
 
@@ -88,9 +92,19 @@ public class MainMenuActivity extends BaseActivity<ActivityMainMenuBinding, Main
         mFragments.add(new IncomeFragment());
         mFragments.add(new ReportFragment());
 
+        mTitle = new ArrayList<String>();
+        mTitle.add("Main");
+        mTitle.add("Expense");
+        mTitle.add("Income");
+        mTitle.add("Report");
+
         viewPager = (ViewPager) findViewById(R.id.pager);
-        viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(),mFragments));
+        viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(),mFragments,mTitle));
         tabLayout = (TabLayout)findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager);
     }
+
+
+
+
 }

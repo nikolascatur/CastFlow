@@ -1,5 +1,6 @@
 package phone.nikolas.com.castflow.fragment.main;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import phone.nikolas.com.castflow.R;
+import phone.nikolas.com.castflow.activity.addexpense.AddExpenseActivity;
 import phone.nikolas.com.castflow.base.BaseFragment;
 import phone.nikolas.com.castflow.databinding.FragmentMainBinding;
 
@@ -37,6 +39,17 @@ public class MainFragment extends BaseFragment<FragmentMainBinding, MainViewMode
 
     @Override
     protected void onViewReady(Bundle savedInstanceState) {
+        MainHandler handler = new MainHandler();
+        handler.setPresenter(presenter);
+        binding.setHandler(handler);
+    }
 
+    public void actionButtonInput(int category, String type) {
+        Intent intent = new Intent(this.getContext(), AddExpenseActivity.class);
+        Bundle bundle =  new Bundle();
+        bundle.putInt("cat", category);
+        bundle.putString("type",type);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }
